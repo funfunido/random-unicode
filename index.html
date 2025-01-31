@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+        </style>
+    <title>Random Unicode Picker</title>
+</head>
+<body>
+    <h1 class="text-stuff">Random Unicode Picker</h1>
+    <p class="text-stuff" id="thepthing"></p>
+    <button onclick="random()" class="text-stuff">Random Unicode</button>
+
+    <script>
+        function random() {
+            let randomUnicode = String.fromCharCode(Math.floor(Math.random() * 65535));
+
+            if (randomUnicode <= 32) {
+                random()
+            // alert("Try again.")
+            } else {
+                let yourUnicode = "Your unicode character is: "
+                let final = yourUnicode.concat(randomUnicode);
+                $("#thepthing").text(final)
+                // alert("success")
+
+            }            
+
+        } 
+
+    </script>
+    <style>
+        .text-stuff {
+            font-family: "DM Sans", serif;
+        }
+
+    </style>
+</body>
+</html>
