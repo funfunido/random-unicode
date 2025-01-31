@@ -11,7 +11,7 @@
 </head>
 <body>
     <h1 class="text-stuff">Random Unicode Picker</h1>
-    <p class="text-stuff" id="thepthing"></p>
+    <p class="uni" id="thepthing"></p>
     <button onclick="clip()" class="text-stuff" id="clipbutton" disabled hidden>Copy Unicode to Clipboard</button>
     <button onclick="random()" class="text-stuff">Random Unicode</button>
 
@@ -59,16 +59,19 @@
     <style>
         @font-face {
             font-family: "Gnu Unifont";
-            src: url("https://unifoundry.com/pub/unifont/unifont-16.0.02/font-builds/unifont-16.0.02.otf"),
-            url("https://unifoundry.com/pub/unifont/unifont-16.0.02/font-builds/unifont_jp-16.0.02.otf"),
-            url("https://unifoundry.com/pub/unifont/unifont-16.0.02/font-builds/unifont_upper-16.0.02.otf"),
-            url("https://unifoundry.com/pub/unifont/unifont-16.0.02/font-builds/unifont_csur-16.0.02.otf");
+            src: url("/unifont-16.0.02.otf"),
+            url("unifont_upper-16.0.02.otf"),
+            url("unifont_upper-16.0.02.otf");
         }
 
         .text-stuff {
-            font-family: "Gnu Unifont", serif;
+            font-family: "Dm Sans", serif;
         }
 
+
+        .uni {
+            font-family: "Gnu Unifont", sans-serif;
+        }
     </style>
 </body>
 </html>
