@@ -12,10 +12,14 @@
 <body>
     <h1 class="text-stuff">Random Unicode Picker</h1>
     <p class="text-stuff" id="thepthing"></p>
+    <button onclick="clip()" class="text-stuff" id="clipbutton" disabled hidden>Copy Unicode to Clipboard</button>
     <button onclick="random()" class="text-stuff">Random Unicode</button>
 
     <script>
         function random() {
+            $("#clipbutton").prop("disabled", false);
+            $("#clipbutton").show();
+            
             let randomUnicode = String.fromCharCode(Math.floor(Math.random() * 65535));
 
             if (randomUnicode <= 32) {
