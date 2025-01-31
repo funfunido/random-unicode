@@ -16,17 +16,19 @@
     <button onclick="random()" class="text-stuff">Random Unicode</button>
 
     <script>
+        let randomUnicode;
+
         function random() {
             $("#clipbutton").prop("disabled", false);
             $("#clipbutton").show();
             
-            let randomUnicode = String.fromCharCode(Math.floor(Math.random() * 65535));
+            randomUnicode = String.fromCharCode(Math.floor(Math.random() * 65535));
 
             if (randomUnicode <= 32) {
                 random()
             // alert("Try again.")
             } else {
-                let yourUnicode = "Your unicode character is: "
+                yourUnicode = "Your unicode character is: "
                 let final = yourUnicode.concat(randomUnicode);
                 $("#thepthing").text(final)
                 // alert("success")
@@ -36,11 +38,11 @@
         } 
 
         function clip() {
-        writeClipboardText(randomUnicode)
-        $("#clipbutton").text("Copied!")
-        setTimeout(function(){
-            $("#clipbutton").text("Copy Unicode to Clipboard")
-    }, 2000)
+            writeClipboardText(randomUnicode)
+            $("#clipbutton").text("Copied!")
+            setTimeout(function(){
+                $("#clipbutton").text("Copy Unicode to Clipboard")
+            }, 2000)
         }
 
         async function writeClipboardText(text) {
