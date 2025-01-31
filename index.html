@@ -37,7 +37,10 @@
 
         function clip() {
         writeClipboardText(randomUnicode)
-
+        $("#clipbutton").text("Copied!")
+        setTimeout(function(){
+            $("#clipbutton").text("Copy Unicode to Clipboard")
+    }, 2000)
         }
 
         async function writeClipboardText(text) {
